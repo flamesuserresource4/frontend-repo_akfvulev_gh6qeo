@@ -1,10 +1,21 @@
-import { Briefcase, Globe2 } from "lucide-react";
+import { Briefcase, Globe2, ShieldAlert } from "lucide-react";
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.15),transparent_40%),radial-gradient(circle_at_80%_0%,rgba(14,165,233,0.12),transparent_40%),radial-gradient(circle_at_50%_80%,rgba(99,102,241,0.12),transparent_40%)]" />
       <div className="relative max-w-6xl mx-auto px-6 pt-24 pb-16">
+        {/* Temporary Streamline banner */}
+        <div className="mb-6">
+          <a href="#streamline" className="block rounded-xl border border-amber-400/30 bg-amber-500/10 p-4 hover:bg-amber-500/15 transition-colors">
+            <div className="flex items-center gap-3 text-amber-200">
+              <ShieldAlert size={18} />
+              <p className="text-sm">
+                Behind on U.S. filings? You may qualify for the IRS Streamlined Filing Compliance Procedures — a forgiving path for many expats. <span className="underline underline-offset-4">Check your eligibility</span>
+              </p>
+            </div>
+          </a>
+        </div>
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-200 text-sm mb-5">
