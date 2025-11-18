@@ -87,6 +87,9 @@ export default function CTA() {
               {status === "error" && (
                 <p className="text-red-400">Something went wrong. Please try again.</p>
               )}
+              <p className="text-xs text-blue-200/60 mt-2 text-center max-w-prose">
+                We respect your privacy. We’ll only use your details to respond to your inquiry and provide the services you request. No spam. No selling of your data. You can request your data be updated or deleted at any time.
+              </p>
             </div>
           </form>
         </div>
