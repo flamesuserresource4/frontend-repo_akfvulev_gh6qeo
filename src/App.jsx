@@ -1,5 +1,6 @@
 import Hero from "./components/Hero";
 import Services from "./components/Services";
+import WhyAmericans from "./components/WhyAmericans";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 
@@ -12,6 +13,7 @@ function App() {
           <div className="text-lg font-semibold">Expat Solutions in Asia</div>
           <nav className="hidden md:flex items-center gap-6 text-blue-200/80">
             <a href="#services" className="hover:text-white">Services</a>
+            <a href="#why" className="hover:text-white">Why Americans?</a>
             <a href="#consult" className="hover:text-white">Consultation</a>
           </nav>
           <a href="#consult" className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-medium">Free consult</a>
@@ -23,6 +25,7 @@ function App() {
         <div id="services">
           <Services />
         </div>
+        <WhyAmericans />
         <CTA />
       </main>
 
