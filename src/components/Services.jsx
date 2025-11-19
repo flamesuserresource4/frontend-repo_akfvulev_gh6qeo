@@ -50,6 +50,10 @@ export default function Services() {
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map(({ icon: Icon, title, desc, extra }) => {
             const isUSTax = title === "United States Tax Advice";
+            const isThailand = title === "Tax Residency in Thailand";
+            const isBanking = title === "Banking & Payments";
+            const isPensions = title === "Pensions & Investments";
+
             return (
               <div
                 key={title}
@@ -62,7 +66,7 @@ export default function Services() {
                     {/* Subtle US flag background */}
                     <div
                       aria-hidden
-                      className="pointer-events-none absolute inset-0 opacity-20"
+                      className="pointer-events-none absolute inset-0 opacity-25"
                       style={{
                         backgroundImage:
                           "url(https://images.unsplash.com/photo-1629380321590-3b3f75d66dec?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxjZXJhbWljJTIwcG90dGVyeSUyMGhhbmRtYWRlfGVufDB8MHx8fDE3NjM1MTI1ODN8MA&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80)",
@@ -72,21 +76,37 @@ export default function Services() {
                         WebkitMaskImage: "radial-gradient(ellipse at 70% 10%, black 40%, transparent 75%)",
                       }}
                     />
-                    {/* 1040 form overlay (blank form texture) */}
+                    {/* 1040EZ form overlay - bolder */}
                     <div
                       aria-hidden
-                      className="pointer-events-none absolute -right-10 -bottom-12 w-[220px] h-[280px] rotate-6 opacity-25"
+                      className="pointer-events-none absolute -right-8 -bottom-10 w-[260px] h-[320px] rotate-6 opacity-50"
                       style={{
                         backgroundImage:
-                          "url(https://images.unsplash.com/photo-1629380321590-3b3f75d66dec?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxjZXJhbWljJTIwcG90dGVyeSUyMGhhbmRtYWRlfGVufDB8MHx8fDE3NjM1MTI1ODN8MA&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80)",
+                          "url(https://upload.wikimedia.org/wikipedia/commons/1/1b/Form_1040EZ.svg)",
                         backgroundSize: "contain",
                         backgroundRepeat: "no-repeat",
-                        filter: "grayscale(100%) contrast(95%) brightness(120%)",
+                        filter: "grayscale(100%) contrast(110%) brightness(115%) drop-shadow(0 2px 6px rgba(0,0,0,0.3))",
                       }}
                     />
                     {/* darkening overlay to ensure readability */}
                     <div className="pointer-events-none absolute inset-0 bg-slate-950/40" />
                   </>
+                )}
+
+                {isThailand && (
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 opacity-15"
+                    style={{
+                      backgroundImage:
+                        "url(https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_Thailand.svg)",
+                      backgroundSize: "180%",
+                      backgroundPosition: "right -40% top -20%",
+                      backgroundRepeat: "no-repeat",
+                      maskImage: "radial-gradient(ellipse at 85% 10%, black 35%, transparent 70%)",
+                      WebkitMaskImage: "radial-gradient(ellipse at 85% 10%, black 35%, transparent 70%)",
+                    }}
+                  />
                 )}
 
                 <div className="relative z-10">
@@ -95,6 +115,61 @@ export default function Services() {
                   </div>
                   <h3 className="mt-4 text-white font-semibold text-lg">{title}</h3>
                   <p className="mt-2 text-blue-200/80 text-sm leading-relaxed">{desc}</p>
+
+                  {isBanking && (
+                    <div className="mt-4 flex items-center gap-3">
+                      <div
+                        className="h-6 w-24 opacity-80"
+                        style={{
+                          backgroundImage:
+                            "url(https://upload.wikimedia.org/wikipedia/commons/7/79/Wells_Fargo_Bank.svg)",
+                          backgroundSize: "contain",
+                          backgroundRepeat: "no-repeat",
+                          backgroundPosition: "left center",
+                        }}
+                        title="Wells Fargo"
+                      />
+                      <div
+                        className="h-6 w-24 opacity-80"
+                        style={{
+                          backgroundImage:
+                            "url(https://upload.wikimedia.org/wikipedia/en/9/9a/Lloyds_Bank.svg)",
+                          backgroundSize: "contain",
+                          backgroundRepeat: "no-repeat",
+                          backgroundPosition: "left center",
+                        }}
+                        title="Lloyds Bank"
+                      />
+                    </div>
+                  )}
+
+                  {isPensions && (
+                    <div className="mt-4 flex items-center gap-3">
+                      <div
+                        className="h-6 w-28 opacity-80"
+                        style={{
+                          backgroundImage:
+                            "url(https://upload.wikimedia.org/wikipedia/commons/7/72/Morgan_Stanley_logo.svg)",
+                          backgroundSize: "contain",
+                          backgroundRepeat: "no-repeat",
+                          backgroundPosition: "left center",
+                        }}
+                        title="Morgan Stanley"
+                      />
+                      <div
+                        className="h-6 w-28 opacity-80"
+                        style={{
+                          backgroundImage:
+                            "url(https://upload.wikimedia.org/wikipedia/commons/2/2f/Fidelity_Investments_logo.svg)",
+                          backgroundSize: "contain",
+                          backgroundRepeat: "no-repeat",
+                          backgroundPosition: "left center",
+                        }}
+                        title="Fidelity Investments"
+                      />
+                    </div>
+                  )}
+
                   {extra && (
                     <div className="mt-4 rounded-lg border border-amber-400/30 bg-amber-400/10 p-4 backdrop-blur-sm">
                       <div className="flex items-start gap-2 text-amber-200">
