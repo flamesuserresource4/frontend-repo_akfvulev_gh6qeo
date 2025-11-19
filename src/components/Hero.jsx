@@ -3,10 +3,26 @@ import { Briefcase, Globe2, ShieldAlert } from "lucide-react";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
+      {/* Background image: male advisor with male client */}
+      <img
+        src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1920&auto=format&fit=crop"
+        alt="Male advisor greeting a male client in a professional office"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-slate-900/70" />
+      {/* Stronger American flag texture above overlay for visibility */}
+      <img
+        src="https://images.unsplash.com/photo-1509281373149-e957c6296406?q=80&w=1920&auto=format&fit=crop"
+        alt="United States flag backdrop"
+        className="absolute inset-0 h-full w-full object-cover opacity-50 mix-blend-overlay scale-105 blur-[0.5px] pointer-events-none select-none"
+      />
+      {/* Soft decorative gradients on top */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.15),transparent_40%),radial-gradient(circle_at_80%_0%,rgba(14,165,233,0.12),transparent_40%),radial-gradient(circle_at_50%_80%,rgba(99,102,241,0.12),transparent_40%)]" />
+
       <div className="relative max-w-6xl mx-auto px-6 pt-24 pb-16">
-        {/* Temporary Streamline banner */}
-        <div className="mb-6">
+        {/* Streamline banner (no expiration) */}
+        <div className="mb-3">
           <a href="#streamline" className="block rounded-xl border border-amber-400/30 bg-amber-500/10 p-4 hover:bg-amber-500/15 transition-colors">
             <div className="flex items-center gap-3 text-amber-200">
               <ShieldAlert size={18} />
@@ -16,6 +32,15 @@ export default function Hero() {
             </div>
           </a>
         </div>
+        {/* Banking / Pension account issue banner */}
+        <div className="mb-6">
+          <a href="#consult" className="block rounded-xl border border-emerald-400/30 bg-emerald-500/10 p-4 hover:bg-emerald-500/15 transition-colors">
+            <div className="text-emerald-200 text-sm">
+              <span className="font-semibold">Bank or pension/investment account being closed or restricted?</span> We have solutions! <span className="underline underline-offset-4">Talk to us</span>
+            </div>
+          </a>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-200 text-sm mb-5">
