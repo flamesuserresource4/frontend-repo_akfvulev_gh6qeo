@@ -1,8 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function CTA() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", interest: "US Tax Advice", notes: "" });
   const [status, setStatus] = useState(null);
+
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const interest = params.get("interest");
+      if (interest) {
+        setForm((f) => ({ ...f, interest }));
+      }
+    } catch {}
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -65,6 +75,7 @@ export default function CTA() {
               <select name="interest" value={form.interest} onChange={handleChange} className="w-full rounded-lg bg-slate-900/60 border border-white/10 px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <option>US Tax Advice</option>
                 <option>Thailand Tax Residency</option>
+                <option>Thailand Visa Assistance</option>
                 <option>Banking Solutions</option>
                 <option>Pension & Investments</option>
                 <option>Health Insurance Quotes</option>

@@ -43,6 +43,28 @@ export default function ExpatTaxThailand() {
           </a>
           <span className="text-sm text-blue-200/80">Speak with us for a quick assessment.</span>
         </div>
+
+        {/* Visa assistance link */}
+        <div className="mt-6 rounded-xl border border-blue-400/20 bg-blue-500/10 p-5">
+          <div className="flex flex-wrap items-center gap-3 text-blue-100/90">
+            <span className="text-sm">Need a Thailand Visa?</span>
+            <div className="flex flex-wrap gap-2 text-xs">
+              <span className="px-2 py-1 rounded-md bg-blue-400/10 border border-blue-300/20 text-blue-100/80">Retirement</span>
+              <span className="px-2 py-1 rounded-md bg-blue-400/10 border border-blue-300/20 text-blue-100/80">DTV</span>
+              <span className="px-2 py-1 rounded-md bg-blue-400/10 border border-blue-300/20 text-blue-100/80">LTV</span>
+              <span className="px-2 py-1 rounded-md bg-blue-400/10 border border-blue-300/20 text-blue-100/80">Elite Visa</span>
+            </div>
+          </div>
+          <p className="mt-3 text-sm text-blue-200/85">
+            We can connect you with a trusted partner before you arrive in Thailand, or introduce you to someone in your area.
+          </p>
+          <a
+            href="?interest=Thailand%20Visa%20Assistance#consult"
+            className="mt-3 inline-block text-sm font-semibold text-blue-200 underline underline-offset-4 hover:text-white"
+          >
+            Yes, I’d like help with a Thailand Visa
+          </a>
+        </div>
       </div>
     </section>
   );
