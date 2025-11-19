@@ -48,27 +48,74 @@ export default function Services() {
         </p>
 
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map(({ icon: Icon, title, desc, extra }) => (
-            <div key={title} className="rounded-xl border border-white/10 bg-slate-800/60 p-6 hover:bg-slate-800 transition-colors">
-              <div className="h-10 w-10 rounded-md bg-blue-500/20 border border-blue-400/40 inline-flex items-center justify-center text-blue-300">
-                <Icon size={20} />
-              </div>
-              <h3 className="mt-4 text-white font-semibold text-lg">{title}</h3>
-              <p className="mt-2 text-blue-200/80 text-sm leading-relaxed">{desc}</p>
-              {extra && (
-                <div className="mt-4 rounded-lg border border-amber-400/30 bg-amber-400/10 p-4">
-                  <div className="flex items-start gap-2 text-amber-200">
-                    <AlertTriangle size={16} className="mt-0.5" />
-                    <div>
-                      <p className="font-medium">{extra.headline}</p>
-                      <p className="text-sm mt-1 text-amber-100/90">{extra.body}</p>
-                      <a href="#consult" className="inline-block mt-2 text-sm font-semibold text-amber-200 underline underline-offset-4 hover:text-amber-100">{extra.cta}</a>
-                    </div>
+          {services.map(({ icon: Icon, title, desc, extra }) => {
+            const isUSTax = title === "United States Tax Advice";
+            return (
+              <div
+                key={title}
+                className={`relative overflow-hidden rounded-xl border border-white/10 p-6 transition-colors ${
+                  isUSTax ? "bg-slate-900/70" : "bg-slate-800/60 hover:bg-slate-800"
+                }`}
+              >
+                {isUSTax && (
+                  <>
+                    {/* Subtle US flag background */}
+                    <div
+                      aria-hidden
+                      className="pointer-events-none absolute inset-0 opacity-20"
+                      style={{
+                        backgroundImage:
+                          "url(https://images.unsplash.com/photo-1629380321590-3b3f75d66dec?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxjZXJhbWljJTIwcG90dGVyeSUyMGhhbmRtYWRlfGVufDB8MHx8fDE3NjM1MTI1ODN8MA&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80)",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        maskImage: "radial-gradient(ellipse at 70% 10%, black 40%, transparent 75%)",
+                        WebkitMaskImage: "radial-gradient(ellipse at 70% 10%, black 40%, transparent 75%)",
+                      }}
+                    />
+                    {/* 1040 form overlay (blank form texture) */}
+                    <div
+                      aria-hidden
+                      className="pointer-events-none absolute -right-10 -bottom-12 w-[220px] h-[280px] rotate-6 opacity-25"
+                      style={{
+                        backgroundImage:
+                          "url(https://images.unsplash.com/photo-1629380321590-3b3f75d66dec?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxjZXJhbWljJTIwcG90dGVyeSUyMGhhbmRtYWRlfGVufDB8MHx8fDE3NjM1MTI1ODN8MA&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80)",
+                        backgroundSize: "contain",
+                        backgroundRepeat: "no-repeat",
+                        filter: "grayscale(100%) contrast(95%) brightness(120%)",
+                      }}
+                    />
+                    {/* darkening overlay to ensure readability */}
+                    <div className="pointer-events-none absolute inset-0 bg-slate-950/40" />
+                  </>
+                )}
+
+                <div className="relative z-10">
+                  <div className="h-10 w-10 rounded-md bg-blue-500/20 border border-blue-400/40 inline-flex items-center justify-center text-blue-300 backdrop-blur-sm">
+                    <Icon size={20} />
                   </div>
+                  <h3 className="mt-4 text-white font-semibold text-lg">{title}</h3>
+                  <p className="mt-2 text-blue-200/80 text-sm leading-relaxed">{desc}</p>
+                  {extra && (
+                    <div className="mt-4 rounded-lg border border-amber-400/30 bg-amber-400/10 p-4 backdrop-blur-sm">
+                      <div className="flex items-start gap-2 text-amber-200">
+                        <AlertTriangle size={16} className="mt-0.5" />
+                        <div>
+                          <p className="font-medium">{extra.headline}</p>
+                          <p className="text-sm mt-1 text-amber-100/90">{extra.body}</p>
+                          <a
+                            href="#consult"
+                            className="inline-block mt-2 text-sm font-semibold text-amber-200 underline underline-offset-4 hover:text-amber-100"
+                          >
+                            {extra.cta}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-          ))}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
