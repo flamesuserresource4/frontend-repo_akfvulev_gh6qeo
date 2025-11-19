@@ -3,6 +3,7 @@ import Services from "./components/Services";
 import WhyAmericans from "./components/WhyAmericans";
 import StreamlineChecklist from "./components/StreamlineChecklist";
 import ExpatTaxThailand from "./components/ExpatTaxThailand";
+import Visa from "./components/Visa";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 
@@ -18,6 +19,7 @@ function App() {
             <a href="#why" className="hover:text-white">Why Americans?</a>
             <a href="#streamline" className="hover:text-white">Streamline</a>
             <a href="#thailand-tax" className="hover:text-white">Thailand Tax</a>
+            <a href="#visa" className="hover:text-white">Visa</a>
             <a href="#consult" className="hover:text-white">Consultation</a>
           </nav>
           <a href="#consult" className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-medium">Free consult</a>
@@ -32,6 +34,7 @@ function App() {
         <WhyAmericans />
         <StreamlineChecklist />
         <ExpatTaxThailand />
+        <Visa />
         <CTA />
       </main>
 
